@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Author(models.Model):
@@ -23,7 +24,7 @@ class Book(models.Model):
     country = models.ManyToManyField(Country)
     
     def __str__(self):
-        return f'{self.name} - {self.author.name}'
+        return f'{self.title} - {self.author.name}'
     
 
 
